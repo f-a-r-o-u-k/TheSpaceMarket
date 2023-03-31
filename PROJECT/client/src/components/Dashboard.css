@@ -1,0 +1,197 @@
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 4 - 15px);
+    background: #fff;
+    padding: 20px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    margin: 20px 20px;
+}
+.sales-boxes {
+    width: 180%;
+    height: 90%;
+    background: #fff;
+    padding: 20px 30px;
+    margin-top: 30px;
+    margin: 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px #2f2d2d;
+}
+.home-content .sales-boxes .sales-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sales-boxes .box .title{
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.sales-boxes .sales-details li.topic{
+    font-size: 20px;
+    font-weight: 500;
+}
+.sales-boxes .sales-details li{
+    list-style: none;
+    margin: 8px 0;
+}
+.sales-boxes .sales-details li a{
+    font-size: 18px;
+    color: #333;
+    font-size: 400;
+    text-decoration: none;
+}
+.sales-boxes .box .button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.sales-boxes .box .button a{
+    color: #fff;
+    background: #C0F2D8;
+    padding: 4px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.sales-boxes .box .button a:hover{
+    background:  #0d3073;
+}   
+
+.home-content .sales-boxes .top-sales{
+    width: 35%;
+    background: #fff;
+    padding: 20px 30px;
+    margin: 0 20px 0 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.sales-boxes .top-sales li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.sales-boxes .top-sales li a img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 10px;
+    background: #333;
+}
+.sales-boxes .top-sales li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.sales-boxes .top-sales li .product,
+.price{
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+
+@media (max-width: 1240px) {
+    .sidebar{
+        width: 60px;
+}
+    .sidebar.active{
+        width: 220px;
+}
+    .home-section{
+        width: calc(100% - 60px);
+        left: 60px;
+}
+    .sidebar.active ~ .home-section{
+        left: 220px;
+        width: calc(100% - 220px);
+        overflow: hidden;
+}
+    .home-section nav{
+        width: calc(100% - 60px);
+        left: 60px;
+}
+.sidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+}
+}
+@media (max-width: 1150px) {
+.home-content .sales-boxes{
+    flex-direction: column;
+}
+.home-content .sales-boxes .box{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+}
+.home-content .sales-boxes .top-sales{
+    margin: 0;
+}
+}
+@media (max-width: 1000px) {
+.overview-boxes .box{
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+}
+}
+@media (max-width: 700px) {
+    nav .sidebar-button .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i{
+        display: none;
+}
+.home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+    }
+.home-content .sales-boxes .sales-details{
+    width: 560px;
+    }
+}
+
+
+.gradient-button {
+    margin: 10px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 2px;
+    width: 100px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+}
+.gradient-button-2 {background-image: linear-gradient(to right, #33a161 0%, #EAECC6 51%, #24562b 100%)}
+.gradient-button-2:hover { background-position: right center; }
+
+.gradient-button-1 {background-image: linear-gradient(to right, #3c3c5c 0%, #EAECC6 51%, #4a4eb5 100%)}
+.gradient-button-1:hover { background-position: right center; }
+
+
+
+
+
+
+
+
+

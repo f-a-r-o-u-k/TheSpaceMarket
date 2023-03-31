@@ -1,22 +1,28 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-
-
-
-const TsmSchema = new mongoose.Schema({
-    Money : {
+const ProductSchema = new mongoose.Schema({
+    money: {
         type: String,
-        requird: [true, "Money is required"],
+        required: [true, "money is required."]
     },
-    NameProduit: {
+    nameProduct: {
         type: String,
-        required: [true, "Name Produit is required"],
+        required: [true, "nameProduct is required."]
     },
-    Détails: {
+    description: {
         type: String,
-        required: [true, "Détails is required"],
+        required: [true, "Description is required."]
+    },
+   
+    image:{
+        type: String,
+        required: [true, "Images are required."]
+    }, 
+    isAccepted:{
+        type: Boolean,
+        default:false
     }
-}, { timestamps: true })
-
-
-module.exports.Tsm = mongoose.model("Tsm", TsmSchema);
+}, {timestamps:true});
+    
+    const Product =  mongoose.model('Product', ProductSchema);
+    module.exports= Product

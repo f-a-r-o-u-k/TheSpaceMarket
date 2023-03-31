@@ -9,12 +9,8 @@ const TsmSchema = new mongoose.Schema({
         requird: [true, "Name is required"],
     },
     PhoneNumber: {
-        type: String,
+        type: Number,
         required: [true, "Phone Number is required"],
-    },
-    Adresse: {
-        type: String,
-        required: [true, "Adresse is required"],
     }
 }, { timestamps: true })
 

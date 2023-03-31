@@ -1,30 +1,48 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
-
-
-
-const TsmSchema = new mongoose.Schema({
-    FirstName: {
-        type: String,
-        requird: [true, "First Name is required"],
+const UserSchema = mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: [true, 'First name is required'],
     },
-    LastName: {
-        type: String,
-        required: [true, "Last Name is required"],
+    lastName: {
+      type: String,
+      required: [true, 'Last name is required'],
     },
-    Email: {
-        type: String,
-        required: [true, "Email is required"],
+    email: {
+      type: String,
+      required: [true, 'email is required'],
+      validate: {
+        validator: (val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
+        message: 'Please enter a valid email',
+      },
     },
-    Password: {
-        type: String,
-        required: [true, "Password is required"],
+    password: {
+      type: String,
+      required: [true, 'Password is required']
     },
-    ConfirmPassword: {
-        type: String,
-        required: [true, "Confirm Password is required"],
-    },
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
+UserSchema.virtual('confirmPassword')
+  .get(() => this._confirmPassword)
+  .set((value) => (this._confirmPassword = value));
 
-module.exports.Tsm = mongoose.model("Tsm", TsmSchema);
+UserSchema.pre('validate', function (next) {
+  if (this.password !== this.confirmPassword) {
+    this.invalidate('confirmPassword', 'Password must match confirm password');
+  }
+  next();
+});
+
+UserSchema.pre('save', function (next) {
+  bcrypt.hash(this.password, 10).then((hash) => {
+    this.password = hash;
+    next();
+  });
+});
+
+module.exports.User = mongoose.model('User', UserSchema);

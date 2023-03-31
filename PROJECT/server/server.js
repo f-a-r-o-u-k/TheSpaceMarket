@@ -1,18 +1,18 @@
-const express = require("express")
-const cors = require("cors")
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
-const port = 8000;
 
-app.use(cors())
-require("./config/mongoose.config")
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(express.json(), express.urlencoded({ extended: true }));
+
+require('./config/mongoose.config');
+
+require('./routes/user.routes')(app);
+require('./routes/createproduct.routes')(app);
+require('./routes/admin.routes')(app);
 
 
-require("./routes/user.routes")(app)
-require("./routes/createproduct.routes")(app)
-require("./routes/giveaway.routes")(app)
-require("./routes/admin.routes")(app)
+const PORT = process.env.PORT || 8000;
 
-
-app.listen(port, console.log("Your server is runnig :)"))
-
+app.listen(PORT, () => console.log(`Server run on port ${PORT}...`));

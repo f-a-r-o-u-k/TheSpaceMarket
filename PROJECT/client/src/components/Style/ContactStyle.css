@@ -1,0 +1,29 @@
+.Contact{
+    background-color: black;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Contact1{
+    background-color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icon1{
+    width: 35px;
+    height: 35px;
+    background-color:rgba(105, 105, 105, 0.308) ;
+    border-radius: 10px;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 55px;
+}
+
+h1{
+    color: white;
+}

@@ -1,8 +1,8 @@
-const TsmController = require("../controllers/")
+const adminController = require("../controllers/admin.controllers")
 
 
 module.exports = (app) => {
-    app.delete("/api/deleteOneproduct/:product_id", TsmController.DeleteOneproduct)
-    app.put("/api/UpdateOneproduct/:product_id", TsmController.UpadateOneproduct)
+    app.post("/api/createadmin",adminController.Createadmin)
+    app.get("/api/alladmin",adminController.GetAlladmin)
 
 }
